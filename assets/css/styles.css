@@ -1,0 +1,391 @@
+:root {
+    --primary-color: #673AB7;
+    /* Deep Purple */
+    --primary-light: #9575CD;
+    --secondary-color: #03A9F4;
+    /* Light Blue */
+    --accent-color: #E91E63;
+    /* Pink */
+    --bg-light: #F8F9FA;
+    --card-bg: #FFFFFF;
+    --text-dark: #212121;
+    --text-light: #757575;
+    --success: #4CAF50;
+    --danger: #F44336;
+    --gradient-hero: linear-gradient(135deg, #E91E63, #673AB7, #03A9F4);
+    --border-radius: 12px;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Landing Page Style */
+.landing-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-main {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 24px;
+    background: #000;
+    /* Mirroring black background logo */
+    border-radius: 20px;
+    /* Rounded corners for logo container like app icon */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.logo-main img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1.app-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+p.tagline {
+    color: var(--text-light);
+    margin-bottom: 32px;
+    font-size: 16px;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    margin-bottom: 16px;
+    padding: 16px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: var(--shadow-soft);
+    text-align: left;
+}
+
+.role-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-light);
+}
+
+.role-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.role-details h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.role-details p {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* Specific Role Icon Backgrounds (As per screenshot colors) */
+.icon-customer {
+    background-color: #E3F2FD;
+    color: #2196F3;
+}
+
+.icon-mechanic {
+    background-color: #E8F5E9;
+    color: #4CAF50;
+}
+
+.icon-parts {
+    background-color: #FFF3E0;
+    color: #FF9800;
+}
+
+.icon-worker {
+    background-color: #FFEBEE;
+    color: #F44336;
+}
+
+.icon-admin {
+    background-color: #F3E5F5;
+    color: #9C27B0;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    background: var(--gradient-hero);
+    color: white;
+    padding: 30px 20px 80px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-profile-circle {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.location-indicator {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.emergency-btn {
+    background: #0D47A1;
+    /* Matching the deep blue banner in image 3 */
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    position: relative;
+    margin-top: -30px;
+    /* Pull into the header area */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.2s;
+}
+
+.emergency-btn:active {
+    transform: scale(0.98);
+}
+
+/* Dashboard Grids */
+.section-title {
+    padding: 24px 20px 12px 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 0 20px;
+}
+
+.service-tile {
+    background: white;
+    padding: 24px 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+.service-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.service-tile .icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-tile h4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Problem Quick Actions */
+.problem-row {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+.problem-item {
+    text-align: center;
+    flex: 1;
+}
+
+.problem-btn {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: none;
+    cursor: pointer;
+}
+
+.problem-item span {
+    font-size: 11px;
+    color: var(--text-light);
+}
+
+/* Bottom Nav */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.nav-item {
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+.nav-item i {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Booking Steps UI */
+.step-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.list-item-card {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.list-item-card.selected {
+    border-color: var(--primary-color);
+    background: #F3E5F5;
+}
+
+.problem-info h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.problem-info p {
+    font-size: 13px;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.footer-btn-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Map Placeholder (Using high aesthetic SVG/Div) */
+.map-view {
+    height: 350px;
+    background: #E8EAF6;
+    border-radius: 20px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-marker {
+    color: var(--accent-color);
+    font-size: 32px;
+    z-index: 2;
+}
